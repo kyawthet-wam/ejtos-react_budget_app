@@ -11,11 +11,17 @@ const AllocationForm = (props) => {
 
     const submitEvent = () => {
 
+            if(isNaN(parseFloat(cost))){
+                alert("Please enter a number");
+                setCost("");
+                return;
+            }
             if(cost > remaining) {
                 alert("The value cannot exceed remaining funds  £"+remaining);
                 setCost("");
                 return;
             }
+
 
         const expense = {
             name: name,
